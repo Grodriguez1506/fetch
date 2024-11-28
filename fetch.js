@@ -6,7 +6,8 @@ window.addEventListener('load', function () {
     var loading = document.querySelector('.loading');
     var loading_letters = document.querySelector('.loading_letters');
     var darkModeBtn = document.querySelector('.switch_mode');
-    var delete_btn = document.querySelector('#delete_btn')
+    var delete_btn = document.querySelector('#delete_btn');
+    var svg_icon = document.querySelector('#svg_loading');
     
     btn_api.addEventListener('click',function(){
 
@@ -43,8 +44,16 @@ window.addEventListener('load', function () {
     darkModeBtn.addEventListener('click', function(){
         
         var body = document.querySelector('body')
+        var color_icon_atribute = svg_icon.getAttribute('fill');
+        if (color_icon_atribute == '#5f6368'){
+            svg_icon.setAttribute('fill','#def6ca');
+        }else{
+            svg_icon.setAttribute('fill','#5f6368');
+        }
 
         body.classList.toggle("dark_mode");
+
+        
     });
  
     

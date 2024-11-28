@@ -1,0 +1,130 @@
+@font-face {
+    font-family:"WebSymbols-Regular";
+    src:url("./WebsYMBOLS-Regular/WebSymbols-Regular.eot?") format("eot"),
+    url("./WebsYMBOLS-Regular/WebSymbols-Regular.woff") format("woff"),
+    url("./WebsYMBOLS-Regular/WebSymbols-Regular.ttf") format("truetype"),
+    url("./WebsYMBOLS-Regular/WebSymbols-Regular.svg#WebSymbols-Regular") format("svg");
+    font-weight:normal;
+    font-style:normal;
+}
+
+:root{
+    --color-fondo: #def6ca;
+    --texto-primario: #f65be3;
+    --texto-secundario: #f497da;
+    --boton-primario: #f679e5;
+    --boton-secundario: #f8bdc4;
+    --texto-boton: #555555;
+}
+
+.dark_mode{
+    --color-fondo: #000;
+    --texto-primario: #f65be3;
+    --texto-secundario: #f497da;
+    --boton-primario: #f679e5;
+    --boton-secundario: #f8bdc4;
+    --texto-boton: white;
+}
+
+body{
+    background-color: var(--color-fondo);
+    color: var(--texto-secundario);
+    font-family:Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+}
+
+body .primary_button{
+    background-color: var(--boton-secundario);
+}
+
+body .secondary_button{
+    background-color: #cacaca;
+}
+
+button{
+    border: none;
+    padding: 15px 10px;
+    border-radius: 5px;
+    color: var(--texto-boton);
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 400ms;
+}
+
+.primary_button:hover,
+.secondary_button:hover{
+    background-color: var(--boton-primario);
+}
+
+button:active{
+    transform: scale(0.9);
+}
+
+@keyframes rotateLoading {
+    0%{
+        transform: rotate(0deg)
+    }
+
+    100%{
+        transform: rotate(360deg)
+    }
+}
+
+.loading{
+    display: none;
+    font-family: "WebSymbols-Regular";
+    animation: rotateLoading 800ms infinite linear;
+    font-size: 20px;
+    margin: 0px 10px;
+    color: var(--texto-boton);
+}
+
+.loading_letters{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    display: none;
+    color: var(--texto-boton);
+}
+
+p{
+    color: var(--texto-boton);
+}
+
+
+.switch_mode{
+    background-color: transparent;
+    background-color: #cacaca96;
+    width: 50px;
+    height: 50px;
+    border-radius: 999px;
+    position: fixed;
+    top: 1%;
+    right: 1%;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 400ms;
+}
+
+.switch_mode:active{
+    transform: scale(0.8);
+}
+
+.switch_mode svg:last-child{
+    display: none;
+}
+
+.dark_mode .switch_mode{
+    background-color: white;
+}
+
+.dark_mode svg:last-child{
+    display: block;
+}
+
+.dark_mode svg:first-child{
+    display: none;
+}
